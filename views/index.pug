@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(action="/images", enctype="multipart/form-data", method="POST")
+    div
+      label(for="image") Image file
+      input#image(type="file", name="image")
+    div
+      button(type="submit") Submit
+
+  if images.length
+    ul
+      each image in images
+        li
+          a(href="/images/" + image)= image
+  else
+    p No images found

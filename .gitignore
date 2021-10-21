@@ -1,0 +1,6 @@
+# https://git-scm.com/docs/gitignore
+/.env*
+/!.env.sample
+/images/*
+!/images/.keep
+/node_modules

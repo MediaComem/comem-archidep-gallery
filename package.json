@@ -1,0 +1,42 @@
+{
+  "name": "gallery",
+  "version": "1.0.0",
+  "description": "Image gallery",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MediaComem/comem-archidep.git"
+  },
+  "author": "Simon Oulevay <npm@alphahydrae.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MediaComem/comem-archidep/issues"
+  },
+  "homepage": "https://github.com/MediaComem/comem-archidep#readme",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon",
+    "lint": "prettier --check .",
+    "lint:write": "prettier --write .",
+    "start": "node ./server.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "log4js": "^6.3.0",
+    "multer": "^1.4.3",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "formdata-node": "^4.3.1",
+    "lodash-es": "^4.17.21",
+    "node-fetch": "^3.0.0",
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  }
+}

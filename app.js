@@ -3,7 +3,7 @@ import createError from 'http-errors';
 import log4js from 'log4js';
 import { join as joinPath } from 'path';
 
-import { createLogger, root } from './config.js';
+import { createLogger, root, title } from './config.js';
 import indexRouter from './routes/index.js';
 import imagesRouter from './routes/images.js';
 
@@ -19,6 +19,12 @@ app.use(express.urlencoded({ extended: false }));
 
 // Static files
 app.use(express.static(joinPath(root, 'public')));
+
+// Provide title to all views
+app.use((req, res, next) => {
+  res.locals.title = title;
+  next();
+});
 
 // Routes
 app.use('/', indexRouter);

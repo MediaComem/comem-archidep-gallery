@@ -1,20 +1,35 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  //- Navbar
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-danger
+    .container-fluid
+      a.navbar-brand(href='/')= title
 
-  form(action="/images", enctype="multipart/form-data", method="POST")
-    div
-      label(for="image") Image file
-      input#image(type="file", name="image")
-    div
-      button(type="submit") Submit
+  //- Image upload form
+  form.row.row-cols-lg-auto.g-3.justify-content-center.align-items-center.mt-5(
+    action='/images',
+    enctype='multipart/form-data',
+    method='POST'
+  )
+    //- Image upload field
+    .col-12
+      label.visually-hidden(for='image-file') Image file
+      input#image-file.form-control(type='file', name='image')
 
+    //- Actions
+    .col-12
+      button.btn.btn-primary(type='submit') Submit
+
+  //- Image gallery
   if images.length
-    ul
+    .row.mt-5.mb-5(data-masonry='{"percentPosition": true}')
       each image in images
-        li
-          a(href="/images/" + image)= image
+        .col-4
+          .card.mt-3
+            img.card-img-top(src="/images/" + image)
+            .card-body
+              p.card-text.text-center
+                code= image
   else
-    p No images found
+    p.lead.text-center.mt-5 No images found

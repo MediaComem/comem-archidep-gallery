@@ -11,6 +11,8 @@ export const imagesDir = joinPath(root, 'images');
 export const host = process.env.GALLERY_LISTEN_HOST ?? '127.0.0.1';
 export const port = parseInt(process.env.GALLERY_LISTEN_PORT ?? '3000', 10);
 
+export const title = process.env.GALLERY_TITLE ?? 'The Root Gallery';
+
 export function createLogger(category) {
   const logger = log4js.getLogger(category);
   logger.level = 'DEBUG';

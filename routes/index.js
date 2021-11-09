@@ -1,7 +1,7 @@
 import express from 'express';
 import { promises as fs } from 'fs';
 
-import { imagesDir } from '../config.js';
+import { imagesDir, title } from '../config.js';
 import { route } from './utils.js';
 
 const router = express.Router();
@@ -13,7 +13,7 @@ router.get(
       /\.png$/u.exec(file)
     );
 
-    res.render('index', { title: 'Gallery', images });
+    res.render('index', { images });
   })
 );
 

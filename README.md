@@ -4,7 +4,7 @@
 
 ## Setup
 
-* Connect to your server with SSH.
+* Connect to the server with SSH.
 * [Install Node.js 16](https://github.com/nodesource/distributions/blob/master/README.md#debinstall):
 
   ```bash
@@ -24,7 +24,18 @@
   ```bash
   $> printf 'GALLERY_LISTEN_HOST=0.0.0.0\nGALLERY_LISTEN_PORT=80\n' > .env
   ```
+
+## Run the application
+
+* Connect to the server with SSH and move into the application directory if
+  necessary:
+
+  ```bash
+  $> cd comem-archidep-gallery
+  ```
 * Run the application:
+
+  **:warning: DO NOT DO THIS :warning:**
 
   ```bash
   $> sudo node ./server.js

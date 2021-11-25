@@ -1,12 +1,11 @@
 # Image gallery
 
-**!!! DO NOT RUN THIS APPLICATION ANYWHERE UNDER ANY CIRCUMSTANCES !!!**
-*(Unless you want the machine it is running on to be hacked.)*
+**:warning: DO NOT RUN THIS APPLICATION ANYWHERE UNDER ANY CIRCUMSTANCES :warning:**
 
 ## Setup
 
 * Connect to your server with SSH.
-* Install Node.js 16:
+* [Install Node.js 16](https://github.com/nodesource/distributions/blob/master/README.md#debinstall):
 
   ```bash
   $> curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -

@@ -8,18 +8,19 @@ import { route } from './utils.js';
 const router = express.Router();
 const logger = createLogger('images');
 
-/**
- * (ㆆ _ ㆆ)
- */
 function determineUploadedFileLocation(req, uploadedFile) {
+  // Get the filename specified by the client or from the uploaded file.
   const originalName = req.body.name ?? uploadedFile.originalname;
   const filename = originalName.replace(/^.*\//, '');
+
+  // (ㆆ _ ㆆ)
   const directory =
     imagesDir + originalName.slice(0, originalName.lastIndexOf(filename));
 
   return { directory, filename };
 }
 
+// Configure the multer library to store images where we specify.
 const storage = multer.diskStorage({
   destination: function (req, uploadedFile, cb) {
     const { directory } = determineUploadedFileLocation(req, uploadedFile);
@@ -37,18 +38,16 @@ const storage = multer.diskStorage({
 
 const upload = multer({ dest: imagesDir, storage });
 
-// POST /images - save uploaded images
+// POST /images - Save uploaded images then redirect to the home page
 router.post('/', upload.single('image'), (req, res) => {
   res.redirect('/');
 });
 
-// GET /images/:name - display an uploaded image
+// GET /images/:name - Display an uploaded image by name
 router.get(
   '/:image',
   route(async (req, res) => {
-    /*
-     * (ㆆ _ ㆆ)
-     */
+    // (ㆆ _ ㆆ)
     const file = resolvePath(`${imagesDir}/${req.params.image}`);
     logger.debug(`Reading file ${file}`);
     res.sendFile(file);

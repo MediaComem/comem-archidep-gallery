@@ -6,9 +6,13 @@ import { route } from './utils.js';
 
 const router = express.Router();
 
+/**
+ * GET / - Serve the home page
+ */
 router.get(
   '/',
   route(async (req, res, next) => {
+    // List files from the images directory.
     const images = (await fs.readdir(imagesDir)).filter(file =>
       /\.png$/u.exec(file)
     );

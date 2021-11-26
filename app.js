@@ -4,6 +4,8 @@ import log4js from 'log4js';
 import { join as joinPath } from 'path';
 
 import { createLogger, root, title } from './config.js';
+
+// Import route implementations.
 import indexRouter from './routes/index.js';
 import imagesRouter from './routes/images.js';
 

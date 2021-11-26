@@ -14,7 +14,7 @@ router.get(
   route(async (req, res, next) => {
     // List files from the images directory.
     const images = (await fs.readdir(imagesDir)).filter(file =>
-      /\.png$/u.exec(file)
+      /\.(?:gif|je?pg|png)$/u.exec(file)
     );
 
     res.render('index', { images });

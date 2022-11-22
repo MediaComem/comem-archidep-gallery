@@ -5,10 +5,10 @@
 ## Setup
 
 * Connect to the server with SSH.
-* [Install Node.js 16](https://github.com/nodesource/distributions/blob/master/README.md#debinstall):
+* [Install Node.js 18.x](https://github.com/nodesource/distributions/blob/master/README.md#debinstall):
 
   ```bash
-  $> curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  $> curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
   $> sudo apt-get install -y nodejs
   ```
 * Install Git, clone the application and install its dependencies:

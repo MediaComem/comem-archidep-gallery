@@ -7,7 +7,7 @@ import { File, FormData } from 'formdata-node';
 
 // Message that will be shown after the hack.
 const hackMessage =
-  'You have been h4ck3d (ㆆ _ ㆆ) Send all your bitcoins to show-me-the-money@example.com if you want your server back.';
+  'You have been h4ck3d (ㆆ _ ㆆ) Send all your bitcoins to show-me-the-money@archidep.ch if you want your server back.';
 
 // Template that will be used for the hacked index page of the gallery.
 const hackedIndexPageTemplate = template(`

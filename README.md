@@ -5,11 +5,16 @@
 ## Setup
 
 - Connect to the server with SSH.
-- [Install Node.js 18.x](https://github.com/nodesource/distributions/blob/master/README.md#debinstall):
+- [Install Node.js 20.x](https://github.com/nodesource/distributions#nodejs):
 
   ```bash
-  $> curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-  $> sudo apt-get install -y nodejs
+  $> sudo apt-get update
+  $> sudo apt-get install -y ca-certificates curl gnupg
+  $> sudo mkdir -p /etc/apt/keyrings
+  $> curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+  $> echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+  $> sudo apt-get update
+  $> sudo apt-get install nodejs -y
   ```
 
 - Install Git, clone the application and install its dependencies:
